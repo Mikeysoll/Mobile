@@ -22,9 +22,11 @@ public interface MobileConfig extends Config {
     String appiumAutomationName();
 
     @Key("deviceName")
+    @DefaultValue("Samsung Galaxy S22 Ultra")
     String deviceName();
 
     @Key("os_version")
+    @DefaultValue("12.0")
     String osVersion();
 
     @Key("project")
