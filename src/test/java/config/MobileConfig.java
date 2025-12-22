@@ -4,15 +4,16 @@ import org.aeonbits.owner.Config;
 
 
 @Config.Sources({
+        "classpath:${prop}.properties",
         "classpath:mobile.properties",
 })
 
 public interface MobileConfig extends Config {
 
-    @Key("browserstack.user")
+    @Key("browserstackUser")
     String browserstackUser();
 
-    @Key("browserstack.key")
+    @Key("browserstackKey")
     String browserstackKey();
 
     @Key("app")
@@ -25,7 +26,7 @@ public interface MobileConfig extends Config {
     @DefaultValue("Samsung Galaxy S22 Ultra")
     String deviceName();
 
-    @Key("os_version")
+    @Key("osVersion")
     @DefaultValue("12.0")
     String osVersion();
 
