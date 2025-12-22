@@ -18,7 +18,7 @@ public interface MobileConfig extends Config {
     @Key("app")
     String app();
 
-    @Key("appium:automationName")
+    @Key("appium.automationName")
     String appiumAutomationName();
 
     @Key("deviceName")
