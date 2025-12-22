@@ -1,0 +1,35 @@
+{
+    "automation_session": {
+        "name": "first_test",
+        "duration": 22,
+        "os": "android",
+        "os_version": "12.0",
+        "browser_version": "app",
+        "browser": null,
+        "device": "Samsung Galaxy S22 Ultra",
+        "status": "done",
+        "hashed_id": "bdf95f227067d02681efeb8438b32a7e419961fd",
+        "reason": "CLIENT_STOPPED_SESSION",
+        "build_name": "browserstack-build-1",
+        "project_name": "First Java Project",
+        "build_hashed_id": "633f7e42e9aa96d3ae8b396dc8be73229773280c",
+        "logs": "https://app-automate.browserstack.com/builds/633f7e42e9aa96d3ae8b396dc8be73229773280c/sessions/bdf95f227067d02681efeb8438b32a7e419961fd/logs",
+        "browserstack_status": "done",
+        "created_at": "2025-12-21T17:52:14.000Z",
+        "browser_url": "https://app-automate.browserstack.com/builds/633f7e42e9aa96d3ae8b396dc8be73229773280c/sessions/bdf95f227067d02681efeb8438b32a7e419961fd",
+        "public_url": "https://app-automate.browserstack.com/builds/633f7e42e9aa96d3ae8b396dc8be73229773280c/sessions/bdf95f227067d02681efeb8438b32a7e419961fd?auth_token=789d39b7e47afe97a569279e1448185ebb051e635ebbf51e748528d32974ac8e",
+        "video_url": "https://app-automate.browserstack.com/sessions/bdf95f227067d02681efeb8438b32a7e419961fd/video?token=a2hjS1hvSEJyN3E0cHRRRGNBOU8zWm4vdnhuQ1FURHAzRnpPQVJyL01zYXpubXZlMmEvSkZiUnAwM25JcWZwL29zWUJoWUZzZ1dYcy9JVGF5Q05BZ2c9PS0tbk9VcjMzUTZhV04xaUN6c1hoYTFGQT09--ebbd3a2eb8171475afeb98cb057479142f728854&source=rest_api&diff=202.960093046",
+        "appium_logs_url": "https://api.browserstack.com/app-automate/builds/633f7e42e9aa96d3ae8b396dc8be73229773280c/sessions/bdf95f227067d02681efeb8438b32a7e419961fd/appiumlogs",
+        "device_logs_url": "https://api.browserstack.com/app-automate/builds/633f7e42e9aa96d3ae8b396dc8be73229773280c/sessions/bdf95f227067d02681efeb8438b32a7e419961fd/devicelogs",
+        "app_details": {
+            "app_url": "bs://62052639d354aea7139864ba993d1cf6106ef4a3",
+            "app_name": "org.wikipedia.alpha",
+            "app_version": "2.5.194-alpha-2017-05-30",
+            "app_custom_id": null,
+            "uploaded_at": "2024-11-27T18:35:33.000Z",
+            "app_filename": "WikipediaSample.apk"
+        },
+        "session_terminal_logs_url": "https://app-automate.browserstack.com/s3-upload/bs-selenium-logs-use/s3.us-east-1/data/633f7e42e9aa96d3ae8b396dc8be73229773280c/bdf95f227067d02681efeb8438b32a7e419961fd-terminal-logs.txt?response-content-type=text%2Fplain&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2XUQHUQMJLOCZKF7%2F20251221%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251221T175558Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=54757eecf7699ff9338aa239383e007fd21f4d306362e1275cfecf62674e559b",
+        "build_terminal_logs_url": "https://app-automate.browserstack.com/s3-upload/bs-selenium-logs-use/s3.us-east-1/data/633f7e42e9aa96d3ae8b396dc8be73229773280c/terminal-logs.txt?response-content-type=text%2Fplain&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2XUQHUQMJLOCZKF7%2F20251221%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251221T175558Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=5faf422b775cf9d9f82bbc8d4e87262ac69c132f0b521454ef59f53200fb3795"
+    }
+}

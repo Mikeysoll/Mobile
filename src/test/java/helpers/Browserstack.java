@@ -5,7 +5,7 @@ import static io.restassured.RestAssured.given;
 
 public class Browserstack {
 
-    // curl -u "qaguru_ti9G5S:5yrxu4nFTKkRExUAhqxh" -X GET "https://api.browserstack.com/app-automate/sessions/0359d759d2aaa4f46401dac46bd281b6d9b24943.json"
+    // curl -u "mikhail_B9r2gX:J2wxzLgWN29oy28V9K2b" -X GET "https://api.browserstack.com/app-automate/sessions/bdf95f227067d02681efeb8438b32a7e419961fd.json"
     // automation_session.video_url
 
     public static String videoUrl(String sessionId) {
