@@ -18,9 +18,22 @@ public interface MobileConfig extends Config {
     @Key("app")
     String app();
 
+    @Key("appium:automationName")
+    String appiumAutomationName();
 
+    @Key("deviceName")
+    String deviceName();
 
+    @Key("os_version")
+    String osVersion();
 
+    @Key("project")
+    String project();
 
+    @Key("build")
+    String buildName();
+
+    @Key("name")
+    String testName();
 
 }

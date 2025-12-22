@@ -1,5 +1,6 @@
 package tests;
 
+import base.TestBase;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.sizeGreaterThan;

@@ -1,10 +1,11 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
+import config.MobileConfig;
+import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import javax.annotation.Nonnull;
@@ -17,22 +18,26 @@ public class BrowserstackDriver implements WebDriverProvider {
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
         MutableCapabilities caps = new MutableCapabilities();
 
+        final MobileConfig config = ConfigFactory.create(
+               MobileConfig.class, System.getProperties()
+        );
+
         // Set your access credentials
-        caps.setCapability("browserstack.user", "mikhail_B9r2gX");
-        caps.setCapability("browserstack.key", "J2wxzLgWN29oy28V9K2b");
+        caps.setCapability("browserstack.user", config.browserstackUser());
+        caps.setCapability("browserstack.key", config.browserstackKey());
 
         // Set URL of the application under test
-        caps.setCapability("app", "bs://sample.app");
-        caps.setCapability("appium:automationName", "UiAutomator2");
+        caps.setCapability("app", config.app());
+        caps.setCapability("appium:automationName", config.appiumAutomationName());
 
         // Specify device and os_version for testing
-        caps.setCapability("deviceName", "Samsung Galaxy S22 Ultra");
-        caps.setCapability("os_version", "12.0");
+        caps.setCapability("deviceName", config.deviceName());
+        caps.setCapability("os_version", config.osVersion());
 
         // Set other BrowserStack capabilities
-        caps.setCapability("project", "First Java Project");
-        caps.setCapability("build", "browserstack-build-1");
-        caps.setCapability("name", "first_test");
+        caps.setCapability("project", config.project());
+        caps.setCapability("build", config.buildName());
+        caps.setCapability("name", config.testName());
 
         // Initialise the remote Webdriver using BrowserStack remote URL
         // and desired capabilities defined above
