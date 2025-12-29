@@ -3,12 +3,13 @@ package config;
 import org.aeonbits.owner.Config;
 
 
+@Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "system:properties",
         "classpath:${prop}.properties",
         "classpath:mobile.properties",
+        "system:properties",
+        "system:env",
 })
-@Config.LoadPolicy(Config.LoadType.MERGE)
 
 
 public interface MobileConfig extends Config {
