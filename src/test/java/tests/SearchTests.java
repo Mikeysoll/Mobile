@@ -13,6 +13,7 @@ public class SearchTests extends TestBase {
 
     @Test
     void successfulSearchTest() {
+        back();
         step("Type search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
             $(id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Appium");
@@ -23,6 +24,7 @@ public class SearchTests extends TestBase {
 
     @Test
     void successfulOpenSearchTest() {
+        back();
         step("Open search", () -> {
             $(accessibilityId("Search Wikipedia")).click();
         });

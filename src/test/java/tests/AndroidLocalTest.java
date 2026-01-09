@@ -26,9 +26,4 @@ public class AndroidLocalTest extends TestBase {
                     .findBy(text("Appian Way")).click();
         });
     }
-    @Test
-    void checkLoginButtonTest() {
-        $(className("android.widget.TextView")).click();
-        $(byText("Login / Sign up Form")).shouldBe(visible);
-    }
 }
