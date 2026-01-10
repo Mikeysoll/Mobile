@@ -57,7 +57,8 @@ public class WdioTests extends TestBase {
                 .clickToggleSwitch()
                 .clickDropdown()
                 .selectDropdownValue()
-                .clickButtonActive();
+                .clickActiveButton()
+                .submit();
 
     }
 }
