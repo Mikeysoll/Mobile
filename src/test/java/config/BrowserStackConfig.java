@@ -9,8 +9,6 @@ import org.aeonbits.owner.Config;
         "system:properties",
         "system:env",
 })
-
-
 public interface BrowserStackConfig extends Config {
 
     @Key("browserstackUser")

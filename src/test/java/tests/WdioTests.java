@@ -51,7 +51,7 @@ public class WdioTests extends TestBase {
     }
 
     @Test
-    void componentsFromTest() {
+    void componentsFormTest() {
         footer.clickFormButton();
         formScreen.setInputValue("TestString")
                 .clickToggleSwitch()

@@ -16,8 +16,8 @@ public class FormScreen {
             toggleSwitch = $("[content-desc=switch]"),
             switchText = $("[content-desc=switch-text]"),
             dropDown = $("[content-desc=Dropdown]"),
-            dropDownValue = $(withText("webdriver.io is awesome")),
-            buttonActive = $(byText("Active"));
+            dropDownValue = $("[text='webdriver.io is awesome']"),
+            buttonActive = $("[content-desc=button-Active]");
 
     public FormScreen  setInputValue(String inputValue){
         inputField.sendKeys(inputValue);
@@ -42,7 +42,7 @@ public class FormScreen {
     }
 
     public FormScreen selectDropdownValue(){
-        $("[text='webdriver.io is awesome']").click();
+        dropDownValue.click();
         return this;
     }
 

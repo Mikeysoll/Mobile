@@ -34,7 +34,7 @@ public class EmulatorDriver implements WebDriverProvider {
                 .setDeviceName(config.DeviceName())
                 .setApp(config.AppPath())
                 .setAppPackage(config.AppPackage())
-                .setAppActivity(config.setAppActivity());
+                .setAppActivity(config.AppActivity());
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
 

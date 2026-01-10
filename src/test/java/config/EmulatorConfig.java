@@ -26,7 +26,7 @@ public interface EmulatorConfig extends Config {
     @Key("AppPackage")
     String AppPackage();
 
-    @Key("setAppActivity")
-    String setAppActivity();
+    @Key("AppActivity")
+    String AppActivity();
 
 }
