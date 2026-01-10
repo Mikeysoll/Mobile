@@ -1,9 +1,11 @@
 package base;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverProvider;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import drivers.BrowserstackDriver;
-import drivers.LocalDriver;
+import drivers.EmulatorDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -16,10 +18,11 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
+    public static String envHost = System.getProperty("envHost", "emulator");
 
     @BeforeAll
     static void beforeAll() {
-        browser = LocalDriver.class.getName();
+        browser = getDriver().getClass().getName();
         browserSize = null;
         timeout = 30000;
     }
@@ -39,5 +42,13 @@ public class TestBase {
         Attach.pageSource();
         closeWebDriver();
         Attach.addVideo(sessionId);
+    }
+
+    static WebDriverProvider getDriver() {
+        return switch (envHost) {
+            case "browserstack" -> new BrowserstackDriver();
+            case "emulator" -> new EmulatorDriver();
+            default -> throw new IllegalArgumentException("Unknown device: ");
+        };
     }
 }

@@ -1,8 +1,7 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.ConfigProvider;
-import config.MobileConfig;
+import config.BrowserStackConfig;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
@@ -19,7 +18,9 @@ public class BrowserstackDriver implements WebDriverProvider {
     public WebDriver createDriver(@Nonnull Capabilities capabilities) {
 
         MutableCapabilities caps = new MutableCapabilities();
-        MobileConfig config = ConfigProvider.getConfig();
+        final BrowserStackConfig config = ConfigFactory.create(
+                BrowserStackConfig.class, System.getProperties()
+        );
 
         // Set your access credentials
         caps.setCapability("browserstack.user", config.browserstackUser());

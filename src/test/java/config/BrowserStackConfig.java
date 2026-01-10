@@ -5,14 +5,13 @@ import org.aeonbits.owner.Config;
 
 @Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
-        "classpath:${prop}.properties",
-        "classpath:mobile.properties",
+        "classpath:${envHost}.properties",
         "system:properties",
         "system:env",
 })
 
 
-public interface MobileConfig extends Config {
+public interface BrowserStackConfig extends Config {
 
     @Key("browserstackUser")
     String browserstackUser();

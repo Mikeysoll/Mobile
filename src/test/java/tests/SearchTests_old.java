@@ -3,6 +3,7 @@ package tests;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,6 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 public class SearchTests_old {
+
 
     @Test
     void successfulSearchTestComplete() throws MalformedURLException, InterruptedException {

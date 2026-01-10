@@ -1,8 +1,10 @@
 package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
+import config.EmulatorConfig;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
+import org.aeonbits.owner.ConfigFactory;
 import org.checkerframework.checker.nullness.qual.NonNull;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
@@ -13,23 +15,26 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import static io.appium.java_client.remote.MobilePlatform.ANDROID;
 import static org.apache.commons.io.FileUtils.copyInputStreamToFile;
 
-public class LocalDriver implements WebDriverProvider {
+public class EmulatorDriver implements WebDriverProvider {
 
     @NonNull
     @Override
     public WebDriver createDriver(@NonNull Capabilities capabilities) {
 
+        final EmulatorConfig config = ConfigFactory.create(
+                EmulatorConfig.class, System.getProperties()
+        );
+
         UiAutomator2Options options = new UiAutomator2Options();
         options.setAutomationName("UiAutomator2")
-                .setPlatformName(ANDROID)
-                .setPlatformVersion("16.0")
-                .setDeviceName("emulator-5554")
-                .setApp(getAppPath())
-                .setAppPackage("org.wikipedia.alpha")
-                .setAppActivity("org.wikipedia.main.MainActivity");
+                .setPlatformName(config.PlatformName())
+                .setPlatformVersion(config.platformVersion())
+                .setDeviceName(config.DeviceName())
+                .setApp(config.AppPath())
+                .setAppPackage(config.AppPackage())
+                .setAppActivity(config.setAppActivity());
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
 
@@ -49,12 +54,13 @@ public class LocalDriver implements WebDriverProvider {
         String appPath = "src/test/resources/apps/" + appVersion;
 
         File app = new File(appPath);
-        if(!app.exists()) {
-            try(InputStream in = new URL(appUrl).openStream()) {
-                copyInputStreamToFile(in,app);
+        if (!app.exists()) {
+            try (InputStream in = new URL(appUrl).openStream()) {
+                copyInputStreamToFile(in, app);
             } catch (IOException e) {
                 throw new AssertionError("Failed to download the app");
             }
-        } return app.getAbsolutePath();
+        }
+        return app.getAbsolutePath();
     }
 }
