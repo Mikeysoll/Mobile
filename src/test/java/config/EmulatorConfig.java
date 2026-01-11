@@ -25,11 +25,9 @@ public interface EmulatorConfig extends Config {
     String AppPath();
 
     @Key("AppPackage")
-    @DefaultValue("com.wdiodemoapp")
     String AppPackage();
 
     @Key("AppActivity")
-    @DefaultValue("com.wdiodemoapp.MainActivity")
     String AppActivity();
 
 }

@@ -27,6 +27,9 @@ public class EmulatorDriver implements WebDriverProvider {
                 EmulatorConfig.class, System.getProperties()
         );
 
+        System.out.println("AppPackage = " + config.AppPackage());
+        System.out.println("AppActivity = " + config.AppActivity());
+
         UiAutomator2Options options = new UiAutomator2Options();
         options.setAutomationName("UiAutomator2")
                 .setPlatformName(config.PlatformName())
@@ -47,8 +50,8 @@ public class EmulatorDriver implements WebDriverProvider {
     }
 
     private String getAppPath() {
-        String appVersion = "app-alpha-universal-release.apk";
-        String appUrl = "https://github.com/wikimedia/apps-android-wikipedia/releases/download/latest/"
+        String appVersion = "android.wdio.native.app.v2.0.0.apk";
+        String appUrl = "https://github.com/webdriverio/native-demo-app/releases/download/v2.0.0/"
                 + appVersion;
 
         String appPath = "src/test/resources/apps/" + appVersion;
