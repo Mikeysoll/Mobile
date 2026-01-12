@@ -68,3 +68,7 @@ task browserstackTest(type: Test) {
         includeTags 'browserstack'
     }
 }
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
