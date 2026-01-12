@@ -35,13 +35,19 @@ public class TestBase {
 
     @AfterEach
     void addAttachments() {
-        String sessionId = Selenide.sessionId().toString();
-        System.out.println(sessionId);
+        if (envHost.equals("browserstack")) {
+            String sessionId = Selenide.sessionId().toString();
+            System.out.println("Browserstack session: " + sessionId);
 
-        Attach.screenshotAs("Last screenshot");
-        Attach.pageSource();
-        closeWebDriver();
-        Attach.addVideo(sessionId);
+            Attach.pageSource();
+            closeWebDriver();
+
+            Attach.addVideo(sessionId);
+        } else {
+            Attach.screenshotAs("Last screenshot");
+            Attach.pageSource();
+            closeWebDriver();
+        }
     }
 
     static WebDriverProvider getDriver() {
